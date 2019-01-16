@@ -49,7 +49,7 @@ The script does all of the work to make and display the map.
 
 The first step is to load the necessary modules from the ArcGIS API.
 
-```load modules
+```loadmodules
 require([
     "esri/Map",
     "esri/views/MapView"
@@ -60,7 +60,7 @@ require([
 
 Next you need to create a map object.
 
-```map object
+```mapobject
     var map = new Map({
         basemap: "streets"
     });
