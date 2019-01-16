@@ -1,37 +1,100 @@
-## Welcome to GitHub Pages
+# Welcome
 
-You can use the [editor on GitHub](https://github.com/jwparker1797/BasicWorldMap/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a explanatory guide for the 'Basic Web Map' web map.  This map was built using the ArcGIS API 4.0.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The map can be viewed [here](https://jwparker1797.github.io/BasicWorldMap/map.html), feel free to view and check out the source using dev tools.
 
-### Markdown
+Below you will find some explanation of some of the elements demonstrated in the map.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## HTML File
 
-```markdown
-Syntax highlighted code block
+The basic [HTML] (https://github.com/jwparker1797/BasicWorldMap/blob/master/map.html) document is the first file to be created. 
 
-# Header 1
-## Header 2
-### Header 3
+###The page header references a few important items:
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```header
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.10/"></script>
+    <link rel="stylesheet" href="style/mapView.css">
+    <title>Basic World Map</title>
+</head>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+This is referencing:
+1. ArcGIS API for JavaScript stylesheet
+2. ArcGIS API module
+3. A custom stylesheet for this specific map
 
-### Jekyll Themes
+### The body of the page references the map script and provides a div element where the map will live.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jwparker1797/BasicWorldMap/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```body
+<body>
+    <script src="scripts/map.js"></script>
+    <div id="mapView"></div>
+</body>
+```
 
-### Support or Contact
+## Script
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The script does all of the work to make and display the map.
+
+### Load modules
+
+The first step is to load the necessary modules from the ArcGIS API.
+
+```load modules
+require([
+    "esri/Map",
+    "esri/views/MapView"
+], function(Map, MarView){}_;
+```
+
+### Build the map
+
+Next you need to create a map object.
+
+```map object
+    var map = new Map({
+        basemap: "streets"
+    });
+```
+
+### Create a view
+
+Next make a 2d view that references a node in the html document and the map object.
+
+```view
+    var view = new MarView({
+        container: "mapView",
+        map: map
+```
+
+## Custom Style
+
+Next lets create a custom style for the webmap.
+
+### Style Sheet
+
+The following makes the map fill the viewable space.
+
+```style
+html,
+body,
+#mapView {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+```
+
+
+That's it!  This is the most basic web map.
+
+
+## Check out more of my work
+
+Go to my [page] (https://jwparker1797.github.io) to check out more of my work.
