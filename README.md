@@ -8,9 +8,11 @@ Below you will find some explanation of some of the elements demonstrated in the
 
 ## HTML File
 
-The basic [HTML] (https://github.com/jwparker1797/BasicWorldMap/blob/master/map.html) document is the first file to be created. 
+The basic [HTML](https://github.com/jwparker1797/BasicWorldMap/blob/master/map.html) document is the first file to be created. 
 
-###The page header references a few important items:
+### The page header 
+
+This references a few important items:
 
 ```header
 <head>
@@ -28,7 +30,9 @@ This is referencing:
 2. ArcGIS API module
 3. A custom stylesheet for this specific map
 
-### The body of the page references the map script and provides a div element where the map will live.
+### The body 
+
+This part references the map script and provides a div element where the map will live.
 
 ```body
 <body>
@@ -49,7 +53,7 @@ The first step is to load the necessary modules from the ArcGIS API.
 require([
     "esri/Map",
     "esri/views/MapView"
-], function(Map, MarView){}_;
+], function(Map, MarView){});
 ```
 
 ### Build the map
@@ -97,4 +101,4 @@ That's it!  This is the most basic web map.
 
 ## Check out more of my work
 
-Go to my [page] (https://jwparker1797.github.io) to check out more of my work.
+Go to my [page](https://jwparker1797.github.io) to check out more of my work.
