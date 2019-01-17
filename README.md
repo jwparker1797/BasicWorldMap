@@ -14,7 +14,7 @@ The basic [HTML](https://github.com/jwparker1797/BasicWorldMap/blob/master/map.h
 
 This references a few important items:
 
-```header
+```html
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -34,7 +34,7 @@ This is referencing:
 
 This part references the map script and provides a div element where the map will live.
 
-```body
+```html
 <body>
     <script src="scripts/map.js"></script>
     <div id="mapView"></div>
@@ -49,7 +49,7 @@ The script does all of the work to make and display the map.
 
 The first step is to load the necessary modules from the ArcGIS API.
 
-```loadmodules
+```javascript
 require([
     "esri/Map",
     "esri/views/MapView"
@@ -60,7 +60,7 @@ require([
 
 Next you need to create a map object.
 
-```mapobject
+```javascript
     var map = new Map({
         basemap: "streets"
     });
@@ -70,7 +70,7 @@ Next you need to create a map object.
 
 Next make a 2d view that references a node in the html document and the map object.
 
-```view
+```javascript
     var view = new MarView({
         container: "mapView",
         map: map
@@ -84,7 +84,7 @@ Next lets create a custom style for the webmap.
 
 The following makes the map fill the viewable space.
 
-```style
+```css
 html,
 body,
 #mapView {
